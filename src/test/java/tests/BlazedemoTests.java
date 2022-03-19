@@ -8,8 +8,11 @@ import org.testng.Assert;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+import utilities.BrowserUtils;
 import utilities.ConfigReader;
 import utilities.TestBase;
+
+import java.io.IOException;
 
 
 public class BlazedemoTests extends TestBase {
@@ -64,12 +67,12 @@ public class BlazedemoTests extends TestBase {
         softAssert.assertAll();
     }
     @Test(groups = {"regression","smoke"})
-    public void validateDestinationOfWeekTest() throws InterruptedException {
+    public void validateDestinationOfWeekTest() throws InterruptedException, IOException {
         driver.get(ConfigReader.getProperty("BlazeDemoURL"));
         Thread.sleep(2000);
         driver.findElement(By.linkText("destination of the week! The Beach!")).click();
         String actualMessage = driver.findElement(By.xpath("(//div[@class='container'])[2]")).getText();
         String expectedMessage = "Destination of the week: Hawaii !";
-        Assert.assertEquals(actualMessage,expectedMessage);
+        Assert.assertEquals(actualMessage,expectedMessage,"Refer to screenshot:"+ BrowserUtils.takeScreenShot());
     }
 }

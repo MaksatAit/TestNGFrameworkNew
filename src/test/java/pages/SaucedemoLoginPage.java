@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-import java.awt.print.PageFormat;
 
 public class SaucedemoLoginPage {
     public SaucedemoLoginPage(){
@@ -28,5 +27,4 @@ public class SaucedemoLoginPage {
         password.sendKeys("secret_sauce");
         loginButton.click();
     }
-
 }

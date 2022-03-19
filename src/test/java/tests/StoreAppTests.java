@@ -1,6 +1,6 @@
 package tests;
 
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -74,33 +74,8 @@ public class StoreAppTests extends TestBase {
         String actualTitle=driver.getTitle();
         String expectedTitle="My account - My Store";
         Assert.assertEquals(actualTitle,expectedTitle);
-
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
